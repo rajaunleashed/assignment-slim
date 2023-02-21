@@ -17,7 +17,8 @@
         "nyholm/psr7-server": "^1.0",
         "php-di/php-di": "^6.4",
         "slim/psr7": "^1.6",
-        "guzzlehttp/psr7": "^2"
+        "guzzlehttp/psr7": "^2",
+        "illuminate/database": "^8.83"
     },
     "config": {
         "process-timeout": 0

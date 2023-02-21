@@ -16,6 +16,9 @@ $container = $containerBuilder->build();
 // Create Slim App instance
 $app = $container->get(App::class);
 
+// Register database
+(require __DIR__ . '/database.php')($app);
+
 // Register routes
 (require __DIR__ . '/routes.php')($app);
 
