@@ -18,7 +18,8 @@
         "php-di/php-di": "^6.4",
         "slim/psr7": "^1.6",
         "guzzlehttp/psr7": "^2",
-        "illuminate/database": "^8.83"
+        "illuminate/database": "^8.83",
+        "tuupola/slim-jwt-auth": "^3.7"
     },
     "config": {
         "process-timeout": 0

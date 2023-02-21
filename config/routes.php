@@ -4,6 +4,8 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
+use \App\Actions\User\ListUsers;
+use \App\Actions\User\ViewUsers;
 
 return function (App $app) {
     $app->get('/', function (ServerRequestInterface $request, ResponseInterface $response) {
@@ -13,7 +15,12 @@ return function (App $app) {
     });
 
     $app->group('/users', function (Group $group) {
-        $group->get('', \App\Actions\User\ListUsers::class);
-        $group->get('/{id}', \App\Actions\User\ViewUsers::class);
+        $group->get('', ListUsers::class);
     });
+    $app->group('/api', function (Group $group) {
+        $group->group('/users', function (Group $group) {
+            $group->get('/{id}', ViewUsers::class);
+        });
+    });
+
 };

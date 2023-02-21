@@ -8,6 +8,4 @@ return function (App $app) {
     $capsule->addConnection($dbSettings);
     $capsule->bootEloquent();
     $capsule->setAsGlobal();
-
-//    return $capsule;
 };
