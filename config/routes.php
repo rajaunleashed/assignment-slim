@@ -14,11 +14,10 @@ return function (App $app) {
         return $response;
     });
 
-    $app->group('/users', function (Group $group) {
-        $group->get('', ListUsers::class);
-    });
+
     $app->group('/api', function (Group $group) {
         $group->group('/users', function (Group $group) {
+            $group->get('', ListUsers::class);
             $group->get('/{id}', ViewUsers::class);
         });
     });
