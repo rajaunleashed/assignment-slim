@@ -18,7 +18,9 @@
         "php-di/php-di": "^6.4",
         "slim/psr7": "^1.6",
         "guzzlehttp/psr7": "^2",
-        "illuminate/database": "^8.83"
+        "illuminate/database": "^8.83",
+        "robmorgan/phinx": "^0.13.4",
+        "fzaninotto/faker": "^1.9"
     },
     "config": {
         "process-timeout": 0
