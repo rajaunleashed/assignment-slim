@@ -28,4 +28,11 @@ $app = $container->get(App::class);
 // Register middleware
 (require __DIR__ . '/middleware.php')($app);
 
+
+$app->add(function ($request, $handler) {
+    $response = $handler->handle($request);
+    return $response
+        ->withHeader('Access-Control-Allow-Origin', '*');
+});
+
 return $app;

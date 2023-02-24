@@ -45,7 +45,7 @@ class UserController extends BaseController
      * @param Response $response
      */
     public function all(Request $request, Response $response) {
-        $users = User::all();
+        $users = User::with('location')->get();
         return $this->respondWithData($response, ['users' => $users]);
     }
 
