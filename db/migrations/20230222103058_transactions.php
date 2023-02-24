@@ -24,7 +24,9 @@ final class Transactions extends AbstractMigration
             ->addColumn('amount', 'double')
             ->addColumn('date', 'datetime')
             ->addColumn('location_id', 'integer')
+            ->addColumn('user_id', 'integer')
             ->addForeignKey('location_id', 'locations', 'id', ['delete'=> 'cascade', 'update'=> 'cascade'])
+            ->addForeignKey('user_id', 'users', 'id', ['delete'=> 'cascade', 'update'=> 'cascade'])
             ->addTimestamps()
             ->create();
     }
