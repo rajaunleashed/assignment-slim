@@ -73,7 +73,7 @@ class UserController extends BaseController
     {
         $userId = (int) $params['id'];
         $user = User::find($userId);
-        return $this->respondWithData($response, ['User' => $user]);
+        return $this->respondWithData($response, ['user' => $user]);
     }
 
 

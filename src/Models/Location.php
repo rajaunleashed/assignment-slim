@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Location extends Model
 {
-    public function location()
+    public function user()
     {
-        return $this->hasOne(Location::class);
+        return $this->belongsTo(User::class);
     }
 
     public function transactions()

@@ -20,6 +20,4 @@ $settings = [
     ],
 ];
 
-// ...
-
 return $settings;
