@@ -5,6 +5,8 @@ use Phinx\Seed\AbstractSeed;
 
 class TransactionSeeder extends AbstractSeed
 {
+    protected $faker;
+    protected $table;
     /**
      * Run Method.
      *
@@ -15,22 +17,32 @@ class TransactionSeeder extends AbstractSeed
      */
     public function run(): void
     {
-        $faker = Faker\Factory::create();
+        $this->faker = Faker\Factory::create();
+        $this->table = $this->table('transactions');
+
+        for ($i = 1; $i <= 12; $i++) {
+           $this->seedTransactions($i);
+        }
+
+
+    }
+
+    private function seedTransactions($index = 1)
+    {
         $data = [];
 
-        for ($i = 1; $i <= 10000; $i++) {
+        for ($i = $index; $i <= 10000; $i++) {
             $random = rand(1, 100);
             $transaction = [
                 'amount'      => rand(12, 57) / 10,
-                'date'      => $faker->date('Y-m-d'),
+                'date'      => $this->faker->date('Y-m-d'),
                 'user_id'   => $random,
                 'location_id'   => $random,
             ];
             array_push($data, $transaction);
         }
 
-        $transactions = $this->table('transactions');
-        $transactions->insert($data)
+        $this->table->insert($data)
             ->saveData();
     }
 }
