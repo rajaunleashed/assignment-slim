@@ -15,14 +15,16 @@ class UserSeeder extends AbstractSeed
      */
     public function run(): void
     {
-        $data = [
-            [
-                'first_name'    => 'admin',
-                'last_name'     => 'admin',
-                'email'         => 'admin@admin.com',
-                'is_admin'      => true
-            ]
-        ];
+        $faker = Faker\Factory::create();
+        $data = [];
+        for ($i = 0; $i < 100; $i++) {
+            $user = [
+                'first_name' => $faker->firstName,
+                'last_name' => $faker->lastName,
+                'email'     => $faker->email
+            ];
+            array_push($data, $user);
+        }
 
         $users = $this->table('users');
         $users->insert($data)
