@@ -13,7 +13,7 @@
 1. Fetching users use this end point GET `http://localhost:8080/api/users`
 
 
-2. ####Save new user
+2. **Save new user**
     
     Endpoint: 
 
@@ -22,14 +22,14 @@
 
    Method: POST
 
-   Params | format | required
-         --- | --- | ---
+    Params | format | required
+   --- | --- | ---
    first_name | number | Yes
    last_name | string | Yes
    email | string | Yes
 
 
-3. ####Update user
+3. **Update user**
 
    Endpoint: 
 
@@ -41,12 +41,12 @@
    body: 
 
    Params | format | required
-      --- | --- | ---
+   --- | --- | ---
    first_name | number | Yes
    last_name | string | Yes
    email | string | Yes
 
-5. ####GET Single User by ID
+5. **GET Single User by ID**
    Endpoint: 
 
    
@@ -56,13 +56,13 @@
 
 
 ### Location APIs
-1. ####Fetching location use this end point GET 
+1. **Fetching location use this end point GET**
 
 
 `http://localhost:8080/api/locations`
 
 
-2. ####GET Location by ID
+2. **GET Location by ID**
    Endpoint: 
 
    
