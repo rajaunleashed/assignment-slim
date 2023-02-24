@@ -20,7 +20,8 @@
         "guzzlehttp/psr7": "^2",
         "illuminate/database": "^8.83",
         "robmorgan/phinx": "^0.13.4",
-        "fzaninotto/faker": "^1.9"
+        "fzaninotto/faker": "^1.9",
+        "illuminate/pagination": "^8.83"
     },
     "config": {
         "process-timeout": 0
