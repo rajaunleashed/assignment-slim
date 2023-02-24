@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
-    protected $perPage = 50;
 
     public function location()
     {

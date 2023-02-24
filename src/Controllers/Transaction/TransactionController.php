@@ -38,7 +38,9 @@ class TransactionController extends BaseController
 
         $query = $query->with('location.user');
 
-        $transactions = $query->paginate();
+        $page = $queryParams['page'] ?? 1;
+        $transactions = $query->paginate(15, ['*'], 'page', $page);
+
         return $this->respondWithData($response, ['transactions' => $transactions]);
 
     }
