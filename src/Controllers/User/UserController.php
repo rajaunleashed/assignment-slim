@@ -3,7 +3,6 @@
 namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
-use App\Controllers\ResponseExceptions;
 use App\Models\User;
 
 use Psr\Http\Message\ResponseInterface as Response;
@@ -21,21 +20,10 @@ class UserController extends BaseController
     {
         $body = $request->getParsedBody();
 
-        $errors = [];
-        if (!isset($body['first_name'])) {
-            $errors['first_name'] = 'First Name is required';
-        }
+        $validations = validateUser($body);
 
-        if (!isset($body['last_name'])) {
-            $errors['last_name'] = 'Last Name is required';
-        }
-
-        if (!isset($body['email'])) {
-            $errors['email'] = 'Email is required';
-        }
-
-        if (count($errors)) {
-            return $this->respondWithData($response, ['errors' => $errors], 422);
+        if (count($validations)) {
+            return $this->respondWithData($response, ['errors' => $validations], 422);
         }
 
         $user = User::where('email', $body['email'])->first();
