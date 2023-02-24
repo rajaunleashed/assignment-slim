@@ -28,7 +28,7 @@ class UserController extends BaseController
 
         $user = User::where('email', $body['email'])->first();
         if ($user) {
-            return $this->respondWithData($response, ['message' => 'Email Already Taken'], 409);
+            return $this->respondWithData($response, ['errors' => ['email' => 'Email Already Taken']], 409);
         }
 
         $newUser = new User();
