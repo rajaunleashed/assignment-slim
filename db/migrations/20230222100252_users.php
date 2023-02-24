@@ -21,12 +21,8 @@ final class Users extends AbstractMigration
         $table
             ->addColumn('first_name', 'string', ['limit' => 30])
             ->addColumn('last_name', 'string', ['limit' => 30])
-            ->addColumn('username', 'string', ['limit' => 40])
             ->addColumn('email', 'string', ['limit' => 100])
-            ->addColumn('password', 'string')
-            ->addColumn('dob', 'string')
-            ->addColumn('is_admin', 'boolean', ['default' => false])
-            ->addIndex(['username', 'email'], ['unique' => true])
+            ->addIndex(['email'], ['unique' => true])
             ->addTimestamps()
             ->create();
 

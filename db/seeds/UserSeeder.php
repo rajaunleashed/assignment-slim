@@ -19,8 +19,6 @@ class UserSeeder extends AbstractSeed
             [
                 'first_name'    => 'admin',
                 'last_name'     => 'admin',
-                'username'      => 'admin',
-                'password'      => hash('sha256', 'admin123'),
                 'email'         => 'admin@admin.com',
                 'is_admin'      => true
             ]
