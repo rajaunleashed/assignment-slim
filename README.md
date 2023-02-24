@@ -6,7 +6,15 @@
 1. Update database credentials located at config/env.php
 2. Run `composer install`
 3. Run migrations using `./phinx migrate`
-4. Run Seeders using `./phinx seed:run`
+4. Run the following Seeders 
+
+   `./phinx seed:run -s UserSeeder`
+
+   `./phinx seed:run -s LocationsSeeder`
+
+   `./phinx seed:run -s TransactionSeeder`
+
+
 5. Run `composer start` it will run using http://localhost:8080
 
 ### User's APIs
