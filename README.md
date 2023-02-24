@@ -18,7 +18,7 @@
     Endpoint: 
 
 
-      `http://localhost:8080/api/users`
+   `http://localhost:8080/api/users`
 
    Method: POST
 
@@ -34,7 +34,7 @@
    Endpoint: 
 
 
-      `http://localhost:8080/api/users/{id}`
+   `http://localhost:8080/api/users/{id}`
 
    Method: PUT
 
@@ -50,7 +50,7 @@
    Endpoint: 
 
    
-      `http://localhost:8080/api/users/{id}`
+   `http://localhost:8080/api/users/{id}`
 
    Method: `GET`
 
@@ -59,14 +59,14 @@
 1. ####Fetching location use this end point GET 
 
 
-      `http://localhost:8080/api/locations`
+`http://localhost:8080/api/locations`
 
 
 2. ####GET Location by ID
    Endpoint: 
 
    
-      `http://localhost:8080/api/locations/{id}`
+`http://localhost:8080/api/locations/{id}`
 
    Method: `GET`
 
@@ -75,7 +75,7 @@
    Fetching transactions use this end point GET 
 
    
-      `http://localhost:8080/api/transactions`
+   `http://localhost:8080/api/transactions`
 
 User Query Params to filter out the data.
 
