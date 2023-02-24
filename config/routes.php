@@ -4,6 +4,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
+use \App\Controllers\User\UserController;
 
 return function (App $app) {
     $app->get('/', function (ServerRequestInterface $request, ResponseInterface $response) {
@@ -13,7 +14,9 @@ return function (App $app) {
     });
 
     $app->group('/users', function (Group $group) {
-        $group->get('', \App\Actions\User\ListUsers::class);
-        $group->get('/{id}', \App\Actions\User\ViewUsers::class);
+        $group->post('', [UserController::class, 'store']);
+        $group->put('/{id}', [UserController::class, 'update']);
+        $group->get('', [UserController::class, 'all']);
+        $group->get('/{id}', [UserController::class, 'getById']);
     });
 };
