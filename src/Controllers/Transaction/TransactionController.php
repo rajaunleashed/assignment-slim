@@ -36,6 +36,8 @@ class TransactionController extends BaseController
             $query = $query->where('date', '<=', $queryParams['toDate']);
         }
 
+        $query = $query->with('location.user');
+
         $transactions = $query->paginate();
         return $this->respondWithData($response, ['transactions' => $transactions]);
 
