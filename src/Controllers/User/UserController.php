@@ -75,6 +75,12 @@ class UserController extends BaseController
     public function update(Request $request, Response $response, $params)
     {
         $body = $request->getParsedBody();
+        $validations = validateUser($body);
+
+        if (count($validations)) {
+            return $this->respondWithData($response, ['errors' => $validations], 422);
+        }
+
         $userId = (int) $params['id'];
         $user = User::find($userId);
         $user->first_name = $body['first_name'] ?? $user->first_name;
