@@ -13,45 +13,72 @@
 1. Fetching users use this end point GET `http://localhost:8080/api/users`
 
 
-2. Save new user using POST method.
+2. ####Save new user
     
-    Endpoint: `http://localhost:8080/api/users`
-
-    Method: `POST`
-
-    body: `{ "first_name": 'string', "last_name": 'string', "email" 'string'}`
+    Endpoint: 
 
 
-3. Update user using PUT method.
-   Endpoint: `http://localhost:8080/api/users/{id}`
+      `http://localhost:8080/api/users`
 
-   Method: `PUT`
+   Method: POST
 
-   body: `{ "first_name": 'string', "last_name": 'string', "email" 'string'}`
+   Params | format | required
+         --- | --- | ---
+   first_name | number | Yes
+   last_name | string | Yes
+   email | string | Yes
 
 
-4. GET Single User by ID
-   Endpoint: `http://localhost:8080/api/users/{id}`
+3. ####Update user
+
+   Endpoint: 
+
+
+      `http://localhost:8080/api/users/{id}`
+
+   Method: PUT
+
+   body: 
+
+   Params | format | required
+      --- | --- | ---
+   first_name | number | Yes
+   last_name | string | Yes
+   email | string | Yes
+
+5. ####GET Single User by ID
+   Endpoint: 
+
+   
+      `http://localhost:8080/api/users/{id}`
 
    Method: `GET`
 
 
 ### Location APIs
-1. Fetching location use this end point GET `http://localhost:8080/api/locations`
+1. ####Fetching location use this end point GET 
 
 
-2. GET Location by ID
-   Endpoint: `http://localhost:8080/api/locations/{id}`
+      `http://localhost:8080/api/locations`
+
+
+2. ####GET Location by ID
+   Endpoint: 
+
+   
+      `http://localhost:8080/api/locations/{id}`
 
    Method: `GET`
 
 
 ### Transaction APIs
-1. Fetching transactions use this end point GET `http://localhost:8080/api/transactions`
+   Fetching transactions use this end point GET 
 
-    User Query Params to filter out the data.
+   
+      `http://localhost:8080/api/transactions`
 
-    QueryParams:
+User Query Params to filter out the data.
+
 
    QueryParam | format 
    --- | --- 
