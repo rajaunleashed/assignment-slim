@@ -1,19 +1,19 @@
 <?php
 
 // Should be set to 0 in production
-error_reporting(E_ALL);
+error_reporting($_ENV['DEBUG'] ? E_ALL : 0);
 
 // Should be set to '0' in production
-ini_set('display_errors', '1');
+ini_set('display_errors', $_ENV['DEBUG']);
 
 // Settings
 $settings = [
     "db" => [
         'driver' => 'mysql',
-        'host' => '127.0.0.1',
-        'database' => 'assignment',
-        'username' => 'root',
-        'password' => '123123Aa@',
+        'host' => $_ENV['HOST'],
+        'database' => $_ENV['DATABASE'],
+        'username' => $_ENV['USERNAME'],
+        'password' => $_ENV['PASSWORD'],
         'collation' => 'utf8_general_ci',
         'charset' => 'utf8',
         'prefix' => ''
