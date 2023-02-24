@@ -20,7 +20,6 @@ final class Transactions extends AbstractMigration
     {
         $table = $this->table('transactions', ['signed' => true]);
         $table
-            ->addColumn('transaction_hash', 'string')
             ->addColumn('amount', 'double')
             ->addColumn('date', 'datetime')
             ->addColumn('location_id', 'integer')
