@@ -21,11 +21,11 @@ final class Transactions extends AbstractMigration
         $table = $this->table('transactions', ['signed' => true]);
         $table
             ->addColumn('amount', 'double')
-            ->addColumn('date', 'datetime')
+            ->addColumn('date', 'date')
             ->addColumn('location_id', 'integer')
             ->addColumn('user_id', 'integer')
-            ->addForeignKey('location_id', 'locations', 'id', ['delete'=> 'cascade', 'update'=> 'cascade'])
-            ->addForeignKey('user_id', 'users', 'id', ['delete'=> 'cascade', 'update'=> 'cascade'])
+            ->addForeignKey('location_id', 'locations', 'id', ['delete'=> 'cascade', 'update'=> 'NO ACTION'])
+            ->addForeignKey('user_id', 'users', 'id', ['delete'=> 'cascade', 'update'=> 'NO ACTION'])
             ->addTimestamps()
             ->create();
     }

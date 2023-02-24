@@ -26,7 +26,7 @@ final class Locations extends AbstractMigration
             ->addColumn('zip', 'string', ['limit' => 100])
             ->addColumn('country', 'string')
             ->addColumn('user_id', 'integer')
-            ->addForeignKey('user_id', 'users', 'id', ['delete'=> 'cascade', 'update'=> 'cascade'])
+            ->addForeignKey('user_id', 'users', 'id', ['delete'=> 'cascade', 'update'=> 'NO ACTION'])
             ->addTimestamps()
             ->create();
     }
