@@ -22,6 +22,7 @@ return function (App $app) {
             $group->put('/{id}', [UserController::class, 'update']);
             $group->get('', [UserController::class, 'all']);
             $group->get('/{id}', [UserController::class, 'getById']);
+            $group->delete('/{id}', [UserController::class, 'delete']);
         });
 
         $group->group('/transactions', function (Group $group) {

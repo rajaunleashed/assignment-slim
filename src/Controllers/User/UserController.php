@@ -89,4 +89,23 @@ class UserController extends BaseController
         $user->save();
         return $this->respondWithData($response, ['message' => 'User updated successfully'], 201);
     }
+
+
+    /**
+     * @method delete
+     * @param Request $request
+     * @param Response $response
+     * @param $params
+     */
+
+    public function delete(Request $request, Response $response, $params)
+    {
+        $userId = (int) $params['id'];
+        $user = User::find($userId);
+        if (!$user) {
+            return $this->respondWithData($response, ['error' => 'User not found'], 402);
+        }
+        $user->delete();
+        return $this->respondWithData($response, ['message' => 'User Deleted Successfully']);
+    }
 }
